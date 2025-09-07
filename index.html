@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chinese Writing App</title>
+    
+    <!-- iPad Optimizations -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Chinese Writing">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="css/ipad.css">
+    
+    <!-- Google Fonts for Chinese Characters -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app" class="app-container">
+        
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Chinese Writing Practice</h1>
+                <div class="session-info">
+                    <span id="character-counter">0/0 Characters</span>
+                    <span id="session-timer">00:00</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="settings-btn" class="header-btn">⚙️</button>
+                <button id="help-btn" class="header-btn">❓</button>
+            </div>
+        </header>
+
+        <!-- Character Selector -->
+        <section class="character-selector">
+            <div class="selector-container">
+                <button id="prev-char" class="nav-btn">‹</button>
+                <div id="character-list" class="character-list">
+                    <!-- Characters will be populated by JavaScript -->
+                </div>
+                <button id="next-char" class="nav-btn">›</button>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Character Info Panel -->
+            <aside class="character-info">
+                <div class="current-character">
+                    <div id="display-character" class="display-char">停</div>
+                    <div class="character-details">
+                        <div id="character-pinyin" class="pinyin">tíng</div>
+                        <div id="character-meaning" class="meaning">stop, halt, park</div>
+                        <div id="character-strokes" class="strokes">11 strokes</div>
+                    </div>
+                </div>
+                <div class="practice-status">
+                    <button id="status-mastered" class="status-btn mastered">✅ Mastered</button>
+                    <button id="status-needs-work" class="status-btn needs-work">⚠️ Needs Work</button>
+                    <button id="status-not-practiced" class="status-btn not-practiced active">❌ Not Practiced</button>
+                </div>
+            </aside>
+
+            <!-- Drawing Canvas Area -->
+            <div class="canvas-container">
+                <div class="canvas-wrapper">
+                    <canvas id="practice-canvas" width="600" height="600"></canvas>
+                </div>
+                
+                <!-- Canvas Controls -->
+                <div class="canvas-controls">
+                    <button id="clear-btn" class="control-btn">🗑️ Clear</button>
+                    <button id="undo-btn" class="control-btn">↶ Undo</button>
+                    <button id="redo-btn" class="control-btn">↷ Redo</button>
+                    <div class="brush-size">
+                        <label for="brush-slider">Brush Size:</label>
+                        <input type="range" id="brush-slider" min="2" max="20" value="8">
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer Controls -->
+        <footer class="app-footer">
+            <div class="footer-left">
+                <div class="progress-indicator">
+                    <div id="progress-bar" class="progress-bar">
+                        <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span id="progress-text">0% Complete</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                <button id="export-btn" class="primary-btn">📤 Export Results</button>
+                <button id="next-character-btn" class="primary-btn">Next Character ›</button>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading Chinese Writing App...</p>
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="export-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Export Practice Results</h2>
+                <button id="close-modal" class="close-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Copy these results to your Fleeting Notes app:</p>
+                <textarea id="export-text" class="export-textarea" readonly></textarea>
+                <div class="export-actions">
+                    <button id="copy-results" class="primary-btn">📋 Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fabric.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+    
+    <!-- App JavaScript -->
+    <script src="js/storage.js"></script>
+    <script src="js/characters.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/practice.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

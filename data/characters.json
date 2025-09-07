@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Chinese character database for writing practice",
+    "lastUpdated": "2025-09-07",
+    "totalCharacters": 8
+  },
+  "characters": {
+    "停": {
+      "character": "停",
+      "pinyin": "tíng",
+      "tone": 2,
+      "meaning": "stop, halt, park",
+      "strokes": 11,
+      "radical": "亻",
+      "hskLevel": 3,
+      "frequency": "common",
+      "components": ["亻", "亭"],
+      "examples": [
+        {
+          "chinese": "停车",
+          "pinyin": "tíngchē",
+          "english": "park a car"
+        },
+        {
+          "chinese": "停止",
+          "pinyin": "tíngzhǐ",
+          "english": "stop, cease"
+        }
+      ],
+      "strokeOrder": [
+        "丿", "丨", "丶", "一", "丨", "𠃍", "一", "丨", "丨", "𠃍", "一"
+      ]
+    },
+    "锁": {
+      "character": "锁",
+      "pinyin": "suǒ",
+      "tone": 3,
+      "meaning": "lock, chain",
+      "strokes": 12,
+      "radical": "钅",
+      "hskLevel": 3,
+      "frequency": "common",
+      "components": ["钅", "贝"],
+      "examples": [
+        {
+          "chinese": "上锁",
+          "pinyin": "shàngsuǒ",
+          "english": "lock up"
+        },
+        {
+          "chinese": "锁门",
+          "pinyin": "suǒmén",
+          "english": "lock the door"
+        }
+      ]
+    },
+    "偷": {
+      "character": "偷",
+      "pinyin": "tōu",
+      "tone": 1,
+      "meaning": "steal, secretly",
+      "strokes": 11,
+      "radical": "亻",
+      "hskLevel": 3,
+      "frequency": "common",
+      "components": ["亻", "俞"],
+      "examples": [
+        {
+          "chinese": "偷东西",
+          "pinyin": "tōu dōngxi",
+          "english": "steal things"
+        },
+        {
+          "chinese": "偷偷",
+          "pinyin": "tōutōu",
+          "english": "secretly, stealthily"
+        }
+      ]
+    },
+    "担": {
+      "character": "担",
+      "pinyin": "dān",
+      "tone": 1,
+      "meaning": "carry, shoulder, burden",
+      "strokes": 8,
+      "radical": "扌",
+      "hskLevel": 3,
+      "frequency": "common",
+      "components": ["扌", "旦"],
+      "examples": [
+        {
+          "chinese": "担心",
+          "pinyin": "dānxīn",
+          "english": "worry, be concerned"
+        },
+        {
+          "chinese": "担负",
+          "pinyin": "dānfù",
+          "english": "bear, shoulder (responsibility)"
+        }
+      ]
+    },
+    "台": {
+      "character": "台",
+      "pinyin": "tái",
+      "tone": 2,
+      "meaning": "platform, stage, Taiwan",
+      "strokes": 5,
+      "radical": "口",
+      "hskLevel": 2,
+      "frequency": "very_common",
+      "components": ["厶", "口"],
+      "examples": [
+        {
+          "chinese": "台湾",
+          "pinyin": "Táiwān",
+          "english": "Taiwan"
+        },
+        {
+          "chinese": "舞台",
+          "pinyin": "wǔtái",
+          "english": "stage, platform"
+        }
+      ]
+    },
+    "演": {
+      "character": "演",
+      "pinyin": "yǎn",
+      "tone": 3,
+      "meaning": "perform, act, develop",
+      "strokes": 14,
+      "radical": "氵",
+      "hskLevel": 3,
+      "frequency": "common",
+      "components": ["氵", "寅"],
+      "examples": [
+        {
+          "chinese": "演出",
+          "pinyin": "yǎnchū",
+          "english": "performance, show"
+        },
+        {
+          "chinese": "演员",
+          "pinyin": "yǎnyuán",
+          "english": "actor, performer"
+        }
+      ]
+    },
+    "唱": {
+      "character": "唱",
+      "pinyin": "chàng",
+      "tone": 4,
+      "meaning": "sing, chant",
+      "strokes": 11,
+      "radical": "口",
+      "hskLevel": 3,
+      "frequency": "common",
+      "components": ["口", "昌"],
+      "examples": [
+        {
+          "chinese": "唱歌",
+          "pinyin": "chànggē",
+          "english": "sing songs"
+        },
+        {
+          "chinese": "合唱",
+          "pinyin": "héchàng",
+          "english": "chorus, choir"
+        }
+      ]
+    },
+    "歌": {
+      "character": "歌",
+      "pinyin": "gē",
+      "tone": 1,
+      "meaning": "song, sing",
+      "strokes": 14,
+      "radical": "欠",
+      "hskLevel": 2,
+      "frequency": "very_common",
+      "components": ["可", "欠"],
+      "examples": [
+        {
+          "chinese": "唱歌",
+          "pinyin": "chànggē",
+          "english": "sing songs"
+        },
+        {
+          "chinese": "歌手",
+          "pinyin": "gēshǒu",
+          "english": "singer"
+        }
+      ]
+    }
+  }
+}

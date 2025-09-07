@@ -1,0 +1,329 @@
+/* iPad-specific optimizations and Apple Pencil support */
+
+/* iPad Pro 12.9" Landscape (2048x2732) */
+@media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .app-container {
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
+    /* Optimize header for landscape */
+    .app-header {
+        padding: 16px 32px;
+    }
+    
+    .header-left h1 {
+        font-size: 1.6rem;
+    }
+    
+    .session-info {
+        font-size: 1rem;
+        gap: 20px;
+    }
+    
+    /* Character selector optimizations */
+    .character-selector {
+        padding: 20px 32px;
+    }
+    
+    .character-item {
+        min-width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    /* Main content layout */
+    .character-info {
+        width: 350px;
+        padding: 32px;
+    }
+    
+    .display-char {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+    
+    .pinyin {
+        font-size: 1.4rem;
+    }
+    
+    .meaning {
+        font-size: 1.1rem;
+    }
+    
+    .status-btn {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+    
+    /* Canvas optimization for large screen */
+    .canvas-container {
+        padding: 32px;
+    }
+    
+    #practice-canvas {
+        width: 700px;
+        height: 700px;
+    }
+    
+    /* Footer adjustments */
+    .app-footer {
+        padding: 20px 32px;
+    }
+    
+    .progress-bar {
+        width: 300px;
+        height: 8px;
+    }
+    
+    .primary-btn {
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+}
+
+/* iPad Air/Mini Landscape */
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .character-info {
+        width: 320px;
+        padding: 28px;
+    }
+    
+    .display-char {
+        font-size: 4.5rem;
+    }
+    
+    #practice-canvas {
+        width: 600px;
+        height: 600px;
+    }
+    
+    .canvas-container {
+        padding: 28px;
+    }
+}
+
+/* Apple Pencil specific optimizations */
+@media (pointer: fine) {
+    /* When Apple Pencil is detected */
+    #practice-canvas {
+        cursor: none; /* Hide cursor for pencil */
+    }
+    
+    /* Increase touch target sizes for pencil precision */
+    .control-btn {
+        min-width: 52px;
+        min-height: 52px;
+        font-size: 0.9rem;
+    }
+    
+    .header-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1.3rem;
+    }
+    
+    .status-btn {
+        min-height: 52px;
+    }
+}
+
+/* Palm rejection zones */
+.palm-rejection-zone {
+    position: absolute;
+    background: transparent;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.palm-rejection-left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+}
+
+.palm-rejection-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+}
+
+/* Prevent iPad system gestures from interfering */
+.app-container {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Disable iOS zoom */
+input, textarea, select {
+    font-size: 16px; /* Prevents zoom on focus */
+}
+
+/* Prevent accidental scrolling */
+body, .app-container {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* Apple Pencil pressure sensitivity UI */
+.pencil-pressure-indicator {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.pencil-pressure-indicator.active {
+    opacity: 1;
+}
+
+.pressure-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    transform-origin: center;
+    transition: transform 0.1s ease;
+}
+
+/* Apple Pencil tilt indicator */
+.pencil-tilt-indicator {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.pencil-tilt-indicator.active {
+    opacity: 1;
+}
+
+.tilt-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+}
+
+/* Landscape-specific modal adjustments */
+@media (orientation: landscape) {
+    .modal-content {
+        width: 70%;
+        max-width: 600px;
+    }
+    
+    .export-textarea {
+        height: 150px;
+    }
+}
+
+/* iPad-specific focus states */
+@media (pointer: coarse) {
+    .header-btn:focus,
+    .control-btn:focus,
+    .status-btn:focus,
+    .primary-btn:focus {
+        outline: 3px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+}
+
+/* Prevent text selection during drawing */
+.canvas-wrapper * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* iPad Pro 11" specific adjustments */
+@media screen and (width: 1194px) and (height: 834px) {
+    .character-info {
+        width: 340px;
+    }
+    
+    #practice-canvas {
+        width: 650px;
+        height: 650px;
+    }
+}
+
+/* Accessibility improvements for iPad */
+@media (prefers-reduced-motion: reduce) {
+    .spinner,
+    .stroke-order-hint,
+    .pressure-circle,
+    .tilt-dot {
+        animation: none;
+    }
+    
+    * {
+        transition: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --text-secondary: #000000;
+        --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .character-item,
+    .status-btn,
+    .control-btn {
+        border-width: 3px;
+    }
+}
+
+/* Force hardware acceleration on iPad */
+.canvas-wrapper,
+#practice-canvas,
+.character-item,
+.status-btn {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Ensure proper rendering on Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2) {
+    #practice-canvas {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
